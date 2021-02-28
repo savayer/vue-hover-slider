@@ -1,5 +1,7 @@
 # vue-hover-slider
 
+[demo](https://savayer.github.io/vue-hover-slider/)
+
 ## Project setup
 ```
 npm install
