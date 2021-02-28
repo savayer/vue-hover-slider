@@ -15,7 +15,11 @@
         :class="{'vue-hover-slider__image--visible': activeSlide === index, 'last-slide': index === countSlides-1 && countSlides >= maxSlidesToShow}"
         :style="`background-image: url('${image}')`">
         <span v-if="countSlidesLeft" class="vue-hover-slider__image-overlay">
-          <span>+{{ countSlidesLeft }} фото</span>
+          <span>
+            <slot name="more" :count="countSlidesLeft">
+              +{{ countSlidesLeft }} {{ countSlidesLeft > 1 ? 'images' : 'image' }}
+            </slot>
+          </span>
         </span>
       </span>
     </div>

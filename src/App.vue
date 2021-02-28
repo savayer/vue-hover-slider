@@ -3,19 +3,59 @@
     <h1>Hover slider</h1>
     <div class="row">
       <div class="item">
-        <p>Show all photos</p>
         <vue-hover-slider
           :slides="slides"
           :height="350"
         />
+        <p>Show all photos</p>
       </div>
       <div class="item">
-        <p>Using <pre>maxSlidesToShow</pre></p>
         <vue-hover-slider
           :slides="slides"
           :height="350"
           :max-slides-to-show="5"
         />
+        <p>Using <pre>maxSlidesToShow</pre></p>
+      </div>
+      <div class="item">
+        <vue-hover-slider
+          :slides="[]"
+          :height="350"
+        />
+        <p>Without images</p>
+      </div>
+      <div class="item">
+        <vue-hover-slider
+          :slides="[]"
+          :height="350"
+          :default-image="require('@/assets/images/custom.webp')"
+        />
+        <p>
+          Custom default image
+          <pre>:default-image="require('@/assets/images/custom.webp')"</pre>
+        </p>
+      </div>
+      <div class="item">
+        <vue-hover-slider
+          :slides="slides"
+          :height="350"
+          link="http://google.com"
+          open-in-new-tab
+          :max-slides-to-show="3"
+        />
+        <p>Set <pre>link</pre> prop</p>
+      </div>
+      <div class="item">
+        <vue-hover-slider
+          :slides="slides"
+          :height="350"
+          :max-slides-to-show="3"
+        >
+          <template #more="{ count }">
+            more {{ count }} photos
+          </template>
+        </vue-hover-slider>
+        <p>Using <pre>more</pre> slot for custom text</p>
       </div>
     </div>
   </div>
@@ -52,7 +92,11 @@ export default {
 
   pre {
     display: inline-block;
+    background: #585858;
     margin: 0;
+    color: #fff;
+    font-weight: bold;
+    padding: 2px 3px;
   }
 
   .container {
@@ -71,6 +115,7 @@ export default {
     margin-left: .9375rem;
     margin-right: .9375rem;
     width: calc(50% - 1.875rem);
+    margin-bottom: 2rem;
 
     @media (max-width: 767px) {
       width: 100%;
