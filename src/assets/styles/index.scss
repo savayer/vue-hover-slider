@@ -1,0 +1,100 @@
+.vue-hover-slider {
+  position: relative;
+  height: 100%;
+
+  &:hover {
+    .vue-hover-slider__controls {
+      visibility: visible;
+    }
+  }
+}
+
+.vue-hover-slider__images {
+  height: 100%;
+}
+
+.vue-hover-slider__image {
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: none;
+  outline: none;
+  height: 100%;
+  width: 100%;
+
+  &--visible {
+    display: block;
+  }
+
+  &.last-slide {
+    position: relative;
+  }
+
+  &--visible.last-slide .vue-hover-slider__image-overlay {
+    display: flex;
+  }
+}
+
+.vue-hover-slider__image-overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(68, 68, 68, 0.8);
+  display: none;
+
+  span {
+    margin: auto;
+    color: #fff;
+  }
+}
+
+.vue-hover-slider__controls {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  visibility: hidden;
+
+  &.hide-controls .vue-hover-slider__control {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    visibility: visible;
+  }
+}
+
+.vue-hover-slider__control {
+  flex: 1 1;
+  height: calc(100% - 5px);
+  position: relative;
+
+  &--active .vue-hover-slider__control-mark{
+    background: #277BD0;
+  }
+}
+
+.vue-hover-slider__control-mark {
+  position: absolute;
+  bottom: 0;
+  left: 3px;
+  width: calc(100% - 10px);
+  height: 3px;
+  background: rgba(214, 214, 214, 0.28);
+
+  @media (max-width: 767px) {
+    height: 2px;
+  }
+}
