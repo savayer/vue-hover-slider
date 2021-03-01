@@ -97,6 +97,7 @@ export default {
     color: #fff;
     font-weight: bold;
     padding: 2px 3px;
+    white-space: pre-line;
   }
 
   .container {

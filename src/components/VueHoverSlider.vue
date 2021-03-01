@@ -1,12 +1,17 @@
 <template>
 <div :style="containerStyles">
   <div class="vue-hover-slider" v-if="slides.length > 0">
-    <a :href="link" :target="linkTarget">
+    <a v-if="link" :href="link" :target="linkTarget">
       <slides-controls
         :slides="slicedSlides"
         v-model="activeSlide"
       />
     </a>
+    <slides-controls
+      v-else
+      :slides="slicedSlides"
+      v-model="activeSlide"
+    />
     <div class="vue-hover-slider__images">
       <span
         v-for="(image, index) in slicedSlides"
@@ -25,11 +30,15 @@
     </div>
   </div>
   <a
-    v-else
+    v-else-if="link"
     :href="link"
     :target="linkTarget"
     class="vue-hover-slider__image vue-hover-slider__image--visible"
     :style="`background-image: url(${defaultImage})`"></a>
+  <div
+    v-else
+    class="vue-hover-slider__image vue-hover-slider__image--visible"
+    :style="`background-image: url(${defaultImage})`"></div>
 </div>
 </template>
 
@@ -49,7 +58,7 @@ export default {
     link: {
       type: String,
       required: false,
-      default: '#'
+      default: ''
     },
     openInNewTab: {
       type: Boolean,
