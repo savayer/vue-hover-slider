@@ -1,6 +1,7 @@
 {
   "name": "vue-hover-slider",
-  "version": "0.3.0",
+  "description": "A simple slider that changes images on mouse hover and touch",
+  "version": "0.3.1",
   "license": "MIT",
   "private": false,
   "homepage": "https://github.com/savayer/vue-hover-slider",
