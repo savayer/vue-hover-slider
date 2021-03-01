@@ -1,26 +1,47 @@
 # vue-hover-slider
 
-[demo](https://savayer.github.io/vue-hover-slider/)
+[View demo](https://savayer.github.io/vue-hover-slider/)
 
-## Project setup
+## Install
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+npm i -S vue-hover-slider
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+## Usage
+```javascript
+import VueHoverSlider from 'vue-hover-slider'
+Vue.use(VueHoverSlider)
 ```
 
-### Customize configuration
+```html
+<template>
+  <vue-hover-slider :slides="slides" />
+</template>
+
+<script>
+  export default {
+    data: () => ({
+      slides: [
+        '/path/to/img'
+      ]
+    })
+  }
+</script>
+```
+
+## Props
+
+Prop | Type | Default | Description
+--------- | ---- | ------- | -----------
+slides (*required*) | `Array` | - | array of images
+link | `String` | `''` | link on the slides
+openInNewTab | `Boolean` | `false` | target _blank or _self if `link` was set
+maxSlidesToShow | `Number` | `Infinity` | max count slides to show
+defaultImage | `String` | `image url` | default image if slides are empty
+height | `Number` | `250` | height of the slider
+
+## License
+[The MIT License](http://opensource.org/licenses/MIT)
+
+### Vue CLI configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
