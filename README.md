@@ -40,6 +40,23 @@ maxSlidesToShow | `Number` | `Infinity` | max count slides to show
 defaultImage | `String` | `image url` | default image if slides are empty
 height | `Number` | `250` | height of the slider
 
+## Slots
+
+#### more
+
+Scoped: `count`  
+Usage:
+```html
+<vue-hover-slider
+  :slides="slides"
+  :height="350"
+  :max-slides-to-show="3">
+  <template #more="{ count }">
+    more {{ count }} photos
+  </template>
+</vue-hover-slider>
+```
+
 ## License
 [The MIT License](http://opensource.org/licenses/MIT)
 
