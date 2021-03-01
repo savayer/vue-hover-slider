@@ -1,6 +1,6 @@
 {
   "name": "vue-hover-slider",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "homepage": "https://github.com/savayer/vue-hover-slider",
   "main": "./lib/vue-hover-slider.umd.min.js",

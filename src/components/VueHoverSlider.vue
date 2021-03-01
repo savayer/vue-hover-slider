@@ -73,7 +73,7 @@ export default {
     defaultImage: {
       type: String,
       required: false,
-      default: require('@/assets/images/default_image.jpg')
+      default: 'https://savayer.space/img/default_image.jpg'
     },
     height: {
       type: Number,
