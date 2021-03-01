@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import SlidesControls from './VueHoverSlidesControls'
+import SlidesControls from '@/components/VueHoverSlidesControls'
 
 export default {
   name: 'VueHoverSlider',
@@ -73,7 +73,7 @@ export default {
     defaultImage: {
       type: String,
       required: false,
-      default: require('../assets/images/default_image.jpg')
+      default: require('@/assets/images/default_image.jpg')
     },
     height: {
       type: Number,
@@ -120,4 +120,4 @@ export default {
 }
 </script>
 
-<style lang="scss" src="../assets/styles/index.scss"></style>
+<style lang="scss" src="@/assets/styles/index.scss"></style>
